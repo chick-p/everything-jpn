@@ -1,10 +1,8 @@
 import { Hono } from 'hono'
 import { serveStatic } from 'hono/cloudflare-workers';
-import manifestJSON from '__STATIC_CONTENT_MANIFEST';
+import manifest from '__STATIC_CONTENT_MANIFEST'
 import { paintSvg } from './svg'
 import { Home } from './home';
-
-const manifest = JSON.parse(manifestJSON);
 
 const app = new Hono()
 app.get('/static/*', serveStatic({ root: './', manifest }));
