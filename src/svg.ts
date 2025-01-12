@@ -233,7 +233,7 @@ export const paintSvg = function(prefectures: number[]): string {
   let paintedSvg = svg;
   for (const prefecture of prefectures) {
     const before = `data-code="${prefecture}" stroke-linejoin="round" fill="#EEEEEE"`;
-    const after = 'data-code="${prefecture}" stroke-linejoin="round" fill="#FF0000"';
+    const after = 'data-code="${prefecture}" stroke-linejoin="round" fill="#ff8a9d"';
     paintedSvg = paintedSvg.replace(before, after);
   }
   return paintedSvg;
