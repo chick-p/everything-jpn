@@ -8,7 +8,9 @@ app.get('/', (c) => {
 })
 
 app.get('/svg', (c) => {
-  const svg = paintSvg([40, 41]);
+  const prefectures = c.req.query('p')?.split(',').map(v => Number(v)) ?? [];
+
+  const svg = paintSvg(prefectures);
   c.status(200);
   c.header("Content-Type", "image/svg+xml");
   return c.body(svg);
