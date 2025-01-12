@@ -1,5 +1,5 @@
 import { Hono } from 'hono'
-import { svg } from './svg'
+import { paintSvg } from './svg'
 
 const app = new Hono()
 
@@ -8,6 +8,7 @@ app.get('/', (c) => {
 })
 
 app.get('/svg', (c) => {
+  const svg = paintSvg([40, 41]);
   c.status(200);
   c.header("Content-Type", "image/svg+xml");
   return c.body(svg);

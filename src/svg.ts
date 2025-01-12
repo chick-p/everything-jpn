@@ -1,4 +1,10 @@
-export const svg = `<?xml version="1.0" encoding="utf-8"?>
+/*
+ * SVG Map of Japan
+ * Copyright (C) miya0001
+ * License under GFDL
+ * https://github.com/geolonia/japanese-prefectures/
+ */
+const svg = `<?xml version="1.0" encoding="utf-8"?>
 <svg class="geolonia-svg-map" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
   <title>Japanese Prefectures</title>
   <desc>Created by Geolonia (https://geolonia.com/).</desc>
@@ -222,3 +228,13 @@ export const svg = `<?xml version="1.0" encoding="utf-8"?>
   </g>
 </svg>
 `
+
+export const paintSvg = function(prefectures: number[]): string {
+  let paintedSvg = svg;
+  for (const prefecture of prefectures) {
+    const before = `data-code="${prefecture}" stroke-linejoin="round" fill="#EEEEEE"`;
+    const after = 'data-code="${prefecture}" stroke-linejoin="round" fill="#FF0000"';
+    paintedSvg = paintedSvg.replace(before, after);
+  }
+  return paintedSvg;
+}
