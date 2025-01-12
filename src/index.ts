@@ -1,10 +1,19 @@
 import { Hono } from 'hono'
+import { serveStatic } from 'hono/cloudflare-workers';
+import manifestJSON from '__STATIC_CONTENT_MANIFEST';
 import { paintSvg } from './svg'
+import { Home } from './home';
+
+const manifest = JSON.parse(manifestJSON);
 
 const app = new Hono()
+app.get('/static/*', serveStatic({ root: './', manifest }));
+
+const appName = 'everything-jpn'
 
 app.get('/', (c) => {
-  return c.text('Hello Hono!')
+  const htmlContent = Home({ appName });
+  return c.html(htmlContent);
 })
 
 app.get('/svg', (c) => {
