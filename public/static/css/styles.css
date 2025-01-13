@@ -62,3 +62,44 @@ a {
 .c-map-container {
   width: 480px;
 }
+
+.c-favorite-url {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.c-favorite-url--label {
+  font-weight: 800;
+  margin: 1.5rem 0 0;
+}
+
+.c-favorite-url--input {
+  width: 400px;
+  padding: 0.625rem;
+  background-color: var(--color-white);
+  border: 2px solid var(--color-gray);
+  border-radius: 0.5rem;
+  line-height: 1.25rem;
+}
+
+.c-url--input:focus {
+  --tw-ring-color: var(--color-blue);
+  border-color: var(--color-blue);
+}
+
+.c-copy--button {
+  padding: 0.625rem 1.25rem;
+  color: var(--color-white);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  background-color: var(--color-dark-teal);
+  border: 0;
+  border-radius: 0.5rem;
+}
+
+.c-copy--button:hover {
+  background-color: var(--color-dark-teal);
+  filter: brightness(1.25);
+}

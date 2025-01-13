@@ -1,6 +1,14 @@
 (async () => {
 
   const isEmpty = (pref) => pref.style.fill === "rgb(4, 4, 4)";
+
+  const button = document.querySelector(".js-copy-button");
+  button.addEventListener("click", (_) => {
+    const input = document.querySelector("#favorite_url");
+    const value = input.value;
+    navigator.clipboard.writeText(value);
+  });
+
   const map = "/svg?p=40,41";
   const container = document.querySelector(".c-map-container");
 
