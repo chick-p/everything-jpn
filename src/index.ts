@@ -1,28 +1,32 @@
-import { Hono } from 'hono'
-import { serveStatic } from 'hono/cloudflare-workers';
-import manifest from '__STATIC_CONTENT_MANIFEST'
-import { paintSvg } from './svg'
-import { Home } from './home';
+import { Hono } from "hono";
+import { serveStatic } from "hono/cloudflare-workers";
+import manifest from "__STATIC_CONTENT_MANIFEST";
+import { paintSvg } from "./svg";
+import { Home } from "./home";
 
-const app = new Hono()
-app.get('/static/*', serveStatic({ root: './', manifest }));
+const app = new Hono();
+app.get("/static/*", serveStatic({ root: "./", manifest }));
 
-const appName = 'everything-jpn'
+const appName = "everything-jpn";
 
-app.get('/', (c) => {
+app.get("/", (c) => {
   const selfUrl = c.req.url;
   const p = "40,41";
   const htmlContent = Home({ appName, selfUrl, p });
   return c.html(htmlContent);
-})
+});
 
-app.get('/svg', (c) => {
-  const prefectures = c.req.query('p')?.split(',').map(v => Number(v)) ?? [];
+app.get("/svg", (c) => {
+  const prefectures =
+    c.req
+      .query("p")
+      ?.split(",")
+      .map((v) => Number(v)) ?? [];
 
   const svg = paintSvg(prefectures);
   c.status(200);
   c.header("Content-Type", "image/svg+xml");
   return c.body(svg);
-})
+});
 
-export default app
+export default app;

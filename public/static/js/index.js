@@ -10,10 +10,10 @@
   const p = container.getAttribute("data-p");
   const map = `/svg?p=${p}`;
 
-  const isEmpty = (code) =>{
+  const isEmpty = (code) => {
     let currentP = container.getAttribute("data-p").split(",");
     return !currentP.includes(code);
-  }
+  };
 
   const res = await fetch(map);
 
@@ -37,7 +37,7 @@
 
         let currentP = container.getAttribute("data-p").split(",");
         if (currentP.includes(code)) {
-          currentP = currentP.filter(e => e !== code);
+          currentP = currentP.filter((e) => e !== code);
         } else {
           currentP.push(code);
           currentP = currentP.sort((a, b) => Number(a) - Number(b));
@@ -45,9 +45,9 @@
         container.setAttribute("data-p", currentP.join(","));
 
         const input = document.querySelector("#favorite_url");
-        input.value = input.value.replaceAll(/\?p=[0-9,]*/g,`?p=${currentP}`);
+        input.value = input.value.replaceAll(/\?p=[0-9,]*/g, `?p=${currentP}`);
 
-        if(isEmpty(code)) {
+        if (isEmpty(code)) {
           target.style.fill = "#EEEEEE";
         } else {
           target.style.fill = "#ff8a9d";

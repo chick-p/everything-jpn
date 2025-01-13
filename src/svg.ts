@@ -227,15 +227,16 @@ const svg = `<?xml version="1.0" encoding="utf-8"?>
     </g>
   </g>
 </svg>
-`
+`;
 
-export const paintSvg = function(prefectures: number[]): string {
+export const paintSvg = function (prefectures: number[]): string {
   let paintedSvg = svg;
-  paintedSvg = paintedSvg.replaceAll(/<title>[\w\s]+<\/title>/g, ''); // hide title tooltip
+  paintedSvg = paintedSvg.replaceAll(/<title>[\w\s]+<\/title>/g, ""); // hide title tooltip
   for (const prefecture of prefectures) {
     const before = `data-code="${prefecture}" stroke-linejoin="round" fill="#EEEEEE"`;
-    const after = 'data-code="${prefecture}" stroke-linejoin="round" fill="#ff8a9d"';
+    const after =
+      'data-code="${prefecture}" stroke-linejoin="round" fill="#ff8a9d"';
     paintedSvg = paintedSvg.replace(before, after);
   }
   return paintedSvg;
-}
+};
