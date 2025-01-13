@@ -18,13 +18,12 @@ export const Layout = (props: {
         ${props.children}
       </main>
     </body>
+    <script src="/static/js/index.js"></script>
   </html>`;
 
 const content = () => {
   return html`
-    <section>
-      <img src="/svg?p=40,41" alt="Map Image" width="500" />
-    </section>
+    <section class="c-map-container"></section>
   `;
 };
 

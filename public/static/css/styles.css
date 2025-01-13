@@ -58,3 +58,7 @@ a {
 .c-main * + * {
   margin: 1.5rem 0 0;
 }
+
+.c-map-container {
+  width: 480px;
+}
