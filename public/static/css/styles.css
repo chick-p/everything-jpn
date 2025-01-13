@@ -103,3 +103,7 @@ a {
   background-color: var(--color-dark-teal);
   filter: brightness(1.25);
 }
+
+.geolonia-svg-map .prefecture {
+  cursor: pointer;
+}

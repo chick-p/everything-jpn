@@ -11,7 +11,8 @@ const appName = 'everything-jpn'
 
 app.get('/', (c) => {
   const selfUrl = c.req.url;
-  const htmlContent = Home({ appName, selfUrl });
+  const p = "40,41";
+  const htmlContent = Home({ appName, selfUrl, p });
   return c.html(htmlContent);
 })
 

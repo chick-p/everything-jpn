@@ -21,17 +21,17 @@ export const Layout = (props: {
     <script src="/static/js/index.js"></script>
   </html>`;
 
-const content = (props: { selfUrl: string }) => {
-  const { selfUrl } = props;
+const content = (props: { selfUrl: string, p: string }) => {
+  const { selfUrl, p } = props;
   return html`
-    <section class="c-map-container"></section>
+    <section class="c-map-container" data-p="${p}"></section>
     <section class="c-favorite-url">
       <label for="favorite_url" class="c-favorite-url--label">URL</label>
       <input
         id="favorite_url"
         type="url"
         class="c-favorite-url--input"
-        value="${selfUrl}"
+        value="${selfUrl}svg?p=${p}"
         readonly
       />
       <button class="js-copy-button c-copy--button">Copy URL</button>
@@ -39,8 +39,8 @@ const content = (props: { selfUrl: string }) => {
   `;
 };
 
-export const Home = async (props: { appName: string; selfUrl: string }) => {
-  const { appName, selfUrl } = props;
-  const children = await content({ selfUrl });
+export const Home = async (props: { appName: string; selfUrl: string, p: string }) => {
+  const { appName, selfUrl, p } = props;
+  const children = await content({ selfUrl, p });
   return html` ${Layout({ title: appName, children })} `;
 };

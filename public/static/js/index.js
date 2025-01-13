@@ -1,7 +1,4 @@
 (async () => {
-
-  const isEmpty = (pref) => pref.style.fill === "rgb(4, 4, 4)";
-
   const button = document.querySelector(".js-copy-button");
   button.addEventListener("click", (_) => {
     const input = document.querySelector("#favorite_url");
@@ -9,8 +6,14 @@
     navigator.clipboard.writeText(value);
   });
 
-  const map = "/svg?p=40,41";
   const container = document.querySelector(".c-map-container");
+  const p = container.getAttribute("data-p");
+  const map = `/svg?p=${p}`;
+
+  const isEmpty = (code) =>{
+    let currentP = container.getAttribute("data-p").split(",");
+    return !currentP.includes(code);
+  }
 
   const res = await fetch(map);
 
@@ -30,7 +33,21 @@
 
       pref.addEventListener("click", (event) => {
         const target = event.currentTarget;
-        if(isEmpty(target)) {
+        const code = target.getAttribute("data-code");
+
+        let currentP = container.getAttribute("data-p").split(",");
+        if (currentP.includes(code)) {
+          currentP = currentP.filter(e => e !== code);
+        } else {
+          currentP.push(code);
+          currentP = currentP.sort((a, b) => Number(a) - Number(b));
+        }
+        container.setAttribute("data-p", currentP.join(","));
+
+        const input = document.querySelector("#favorite_url");
+        input.value = input.value.replaceAll(/\?p=[0-9,]*/g,`?p=${currentP}`);
+
+        if(isEmpty(code)) {
           target.style.fill = "#EEEEEE";
         } else {
           target.style.fill = "#ff8a9d";
