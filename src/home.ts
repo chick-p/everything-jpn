@@ -10,6 +10,7 @@ export const Layout = (props: { title: string; children: string }) =>
         <link rel="stylesheet" href="/static/css/reset.css" />
         <link rel="stylesheet" href="/static/css/styles.css" />
         <link rel="icon" href="/static/favicon.svg" />
+        <link rel="apple-touch-icon" href="/static/apple-touch-icon.png" />
       </head>
       <body>
         <main class="c-main">
