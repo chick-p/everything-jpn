@@ -10,8 +10,8 @@ app.get("/static/*", serveStatic({ root: "./", manifest }));
 const appName = "everything-jpn";
 
 app.get("/", (c) => {
-  const selfUrl = c.req.url;
-  const p = "40,41";
+  const selfUrl = c.req.url.split("?")[0];
+  const p = c.req.query("p") || "40,41";
   const htmlContent = Home({ appName, selfUrl, p });
   return c.html(htmlContent);
 });
