@@ -1,6 +1,6 @@
 (async () => {
   const button = document.querySelector(".js-copy-button");
-  button.addEventListener("click", (_) => {
+  button.addEventListener("click", () => {
     const input = document.querySelector("#favorite_url");
     const value = input.value;
     navigator.clipboard.writeText(value);
