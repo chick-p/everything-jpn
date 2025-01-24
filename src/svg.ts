@@ -234,8 +234,7 @@ export const paintSvg = function (prefectures: number[]): string {
   paintedSvg = paintedSvg.replaceAll(/<title>[\w\s]+<\/title>/g, ""); // hide title tooltip
   for (const prefecture of prefectures) {
     const before = `data-code="${prefecture}" stroke-linejoin="round" fill="#EEEEEE"`;
-    const after =
-      'data-code="${prefecture}" stroke-linejoin="round" fill="#ff8a9d"';
+    const after = `data-code="${prefecture}" stroke-linejoin="round" fill="#ff8a9d"`;
     paintedSvg = paintedSvg.replace(before, after);
   }
   return paintedSvg;
