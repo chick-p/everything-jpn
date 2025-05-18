@@ -64,18 +64,21 @@ a {
   width: 480px;
 }
 
-.c-favorite-url {
+.c-favorite-url,
+.c-load-url {
   display: flex;
   align-items: center;
   gap: 0.25rem;
 }
 
-.c-favorite-url--label {
+.c-favorite-url--label,
+.c-load-url--label {
   font-weight: 800;
   margin: 1.5rem 0 0;
 }
 
-.c-favorite-url--input {
+.c-favorite-url--input,
+.c-load-url--input {
   width: 400px;
   padding: 0.625rem;
   background-color: var(--color-white);
@@ -89,7 +92,8 @@ a {
   border-color: var(--color-blue);
 }
 
-.c-copy--button {
+.c-copy--button,
+.c-load--button {
   padding: 0.625rem 1.25rem;
   color: var(--color-white);
   font-size: 0.875rem;
@@ -100,9 +104,23 @@ a {
   border-radius: 0.5rem;
 }
 
-.c-copy--button:hover {
+.c-copy--button:hover,
+.c-load--button:hover {
   background-color: var(--color-dark-teal);
   filter: brightness(1.25);
+}
+
+.c-load-url--input,
+.c-load--button {
+  margin-top: 1rem;
+}
+
+.c-svg-url-warning {
+  margin-top: 0;
+}
+
+.js-svg-url-warning {
+  display: none;
 }
 
 .geolonia-svg-map .prefecture {
