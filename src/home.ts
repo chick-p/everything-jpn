@@ -36,6 +36,17 @@ const content = (props: { selfUrl: string; p: string }) => {
       />
       <button class="js-copy-button c-copy--button">Copy URL</button>
     </section>
+    <section>
+      <details>
+        <summary class="c-load-url--summary">Load from SVG URL</summary>
+        <label for="load_url" class="c-load-url--label">URL</label>
+        <input id="load_url" type="url" class="c-load-url--input" value="" />
+        <button class="js-load-button c-load--button">Load URL</button>
+        <p class="js-svg-url-warning c-svg-url-warning">
+          Require to input SVG URL
+        </p>
+      </details>
+    </section>
   `;
 };
 

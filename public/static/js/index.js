@@ -1,9 +1,22 @@
 (async () => {
   const button = document.querySelector(".js-copy-button");
+  const buttonForLoad = document.querySelector(".js-load-button");
   button.addEventListener("click", () => {
     const input = document.querySelector("#favorite_url");
     const value = input.value;
     navigator.clipboard.writeText(value);
+  });
+
+  buttonForLoad.addEventListener("click", () => {
+    const input = document.querySelector("#load_url");
+    const value = input.value || "";
+    try {
+      const params = new URL(value).searchParams;
+      window.location.href = `/?${params.toString()}`;
+    } catch {
+      const svgUrlWarning = document.querySelector(".js-svg-url-warning");
+      svgUrlWarning.classList.remove("js-svg-url-warning");
+    }
   });
 
   const container = document.querySelector(".c-map-container");
