@@ -11,7 +11,7 @@
     "fix:eslint": "pnpm run lint:eslint --fix"
   },
   "dependencies": {
-    "hono": "^4.9.0"
+    "hono": "^4.9.1"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20250807.0",
