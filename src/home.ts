@@ -24,7 +24,7 @@ export const Layout = (props: { title: string; children: string }) =>
 const content = (props: { selfUrl: string; p: string }) => {
   const { selfUrl, p } = props;
   return html`
-    <section class="c-map-container" data-p="${p}"></section>
+    <section class="c-map-container" data-p=${p}></section>
     <section class="c-favorite-url">
       <label for="favorite_url" class="c-favorite-url--label">URL</label>
       <input
