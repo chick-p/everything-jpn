@@ -13,8 +13,8 @@ importers:
         version: 4.11.4
     devDependencies:
       '@cloudflare/workers-types':
-        specifier: ^4.20260108.0
-        version: 4.20260108.0
+        specifier: ^4.20260115.0
+        version: 4.20260115.0
       eslint:
         specifier: ^9.39.2
         version: 9.39.2
@@ -35,7 +35,7 @@ importers:
         version: 8.53.0(eslint@9.39.2)(typescript@5.7.3)
       wrangler:
         specifier: ^4.54.0
-        version: 4.54.0(@cloudflare/workers-types@4.20260108.0)
+        version: 4.54.0(@cloudflare/workers-types@4.20260115.0)
 
 packages:
 
@@ -82,8 +82,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@cloudflare/workers-types@4.20260108.0':
-    resolution: {integrity: sha512-0SuzZ7SeMB35X0wL2rhsEQG1dmfAGY8N8z7UwrkFb6hxerxwXP4QuIzcF8HtCJTRTjChmarxV+HQC+ADB4UK1A==}
+  '@cloudflare/workers-types@4.20260115.0':
+    resolution: {integrity: sha512-vi68ZODh6m9fH9wdBOzDsyWgrYRIZbzZEAGGkvFn4b1FQSukxaWS8NAtSd/h9mL4gVK9hG8FEYq/jipdOo4RJg==}
 
   '@cspotcode/source-map-support@0.8.1':
     resolution: {integrity: sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==}
@@ -1508,7 +1508,7 @@ snapshots:
   '@cloudflare/workerd-windows-64@1.20251210.0':
     optional: true
 
-  '@cloudflare/workers-types@4.20260108.0': {}
+  '@cloudflare/workers-types@4.20260115.0': {}
 
   '@cspotcode/source-map-support@0.8.1':
     dependencies:
@@ -3009,7 +3009,7 @@ snapshots:
       '@cloudflare/workerd-linux-arm64': 1.20251210.0
       '@cloudflare/workerd-windows-64': 1.20251210.0
 
-  wrangler@4.54.0(@cloudflare/workers-types@4.20260108.0):
+  wrangler@4.54.0(@cloudflare/workers-types@4.20260115.0):
     dependencies:
       '@cloudflare/kv-asset-handler': 0.4.1
       '@cloudflare/unenv-preset': 2.7.13(unenv@2.0.0-rc.24)(workerd@1.20251210.0)
@@ -3020,7 +3020,7 @@ snapshots:
       unenv: 2.0.0-rc.24
       workerd: 1.20251210.0
     optionalDependencies:
-      '@cloudflare/workers-types': 4.20260108.0
+      '@cloudflare/workers-types': 4.20260115.0
       fsevents: 2.3.3
     transitivePeerDependencies:
       - bufferutil
