@@ -23,6 +23,6 @@
     "npm-run-all2": "^9.0.3",
     "prettier": "^3.9.6",
     "typescript-eslint": "^8.69.0",
-    "wrangler": "^4.124.0"
+    "wrangler": "^4.128.0"
   }
 }
