@@ -1,8 +1,9 @@
 /*
  * SVG Map of Japan
  * Copyright (C) miya0001
- * License under GFDL
+ * License under GFDL (https://www.gnu.org/licenses/fdl-1.3.html)
  * https://github.com/geolonia/japanese-prefectures/
+ * See THIRD_PARTY_LICENSES.md for details.
  */
 const svg = `<?xml version="1.0" encoding="utf-8"?>
 <svg class="geolonia-svg-map" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
