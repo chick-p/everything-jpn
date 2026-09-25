@@ -1,13 +1,21 @@
 /*
  * SVG Map of Japan
  * Copyright (C) miya0001
- * License under GFDL
+ * License under GFDL (https://www.gnu.org/licenses/fdl-1.3.html)
  * https://github.com/geolonia/japanese-prefectures/
+ * See THIRD_PARTY_LICENSES.md for details.
  */
 const svg = `<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Japanese prefectures map data
+  Copyright (C) miya0001
+  Licensed under the GNU Free Documentation License (GFDL)
+  https://www.gnu.org/licenses/fdl-1.3.html
+  Source: https://github.com/geolonia/japanese-prefectures/
+-->
 <svg class="geolonia-svg-map" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
   <title>Japanese Prefectures</title>
-  <desc>Created by Geolonia (https://geolonia.com/).</desc>
+  <desc>Created by Geolonia (https://geolonia.com/). Map data licensed under GFDL: https://www.gnu.org/licenses/fdl-1.3.html</desc>
   <g class="svg-map" transform="matrix(1.028807, 0, 0, 1.028807, -47.544239, -28.806583)">
     <g class="prefectures" transform="matrix(1, 0, 0, 1, 6, 18)">
       <g class="okinawa kyusyu-okinawa prefecture" data-code="47" stroke-linejoin="round" fill="#EEEEEE" fill-rule="nonzero" stroke="#000000" stroke-width="1.0" transform="translate(52.000000, 193.000000)">
