@@ -40,8 +40,8 @@ importers:
         specifier: ^8.72.1
         version: 8.72.1(eslint@10.14.0)(typescript@5.7.3)
       wrangler:
-        specifier: ^4.153.0
-        version: 4.153.0(@cloudflare/workers-types@5.20261026.1)
+        specifier: ^4.156.0
+        version: 4.156.0(@cloudflare/workers-types@5.20261026.1)
 
 packages:
 
@@ -819,8 +819,8 @@ packages:
     resolution: {integrity: sha512-S3UwM3yj5mtUSEfP41UZmt/0SCoVYUcU1rkXv+BQ5Ig8ndL4sPoJNBUJERafdPb5jjHJGuMgytgKvKIf58XNBw==}
     engines: {node: '>= 0.10.0'}
 
-  miniflare@5.20261023.0-beta:
-    resolution: {integrity: sha512-SHY8A98gCvmrnBLqABHRTSh3duAL1z+tHPRZu/tqxHFqVARrZ4oQis/ALYwp3XvzHvs6B/ff/CdcCafqP+cOFA==}
+  miniflare@5.20261023.3-beta:
+    resolution: {integrity: sha512-thdXzlktu5GE1o/BlmMAPeJ0Cu6Tu5LpMbRlyfRrpVvMRrhd6p52TMqcITCZZLVzt1UO92VGBkLDhLOpryUAyQ==}
     engines: {node: '>=22.0.0'}
 
   minimatch@10.2.6:
@@ -903,6 +903,11 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
+  semver@7.8.6:
+    resolution: {integrity: sha512-9lpSSU4Mly3mrtruwLs1eLK6+gzbzqeBFwRNjIjE+9LuDpWdYctrQlQ3ej1Ilgi7gknpsTRnPoLP8DpCHqHIJw==}
+    engines: {node: '>=10'}
+    hasBin: true
+
   sharp@0.35.5:
     resolution: {integrity: sha512-Ywn4OnzGukp7CDMrp08RQ50YKmuwG47brZgIVPTvBaaAfQlRlygrRqSrxdCiL9M+LlzLBiJ68IR1QqvzHyjC7g==}
     engines: {node: '>=20.9.0'}
@@ -938,8 +943,8 @@ packages:
     peerDependencies:
       typescript: '>=4.8.4'
 
-  tslib@2.8.1:
-    resolution: {integrity: sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==}
+  tslib@2.9.1:
+    resolution: {integrity: sha512-a4Ux9VKuIMHsOS7ENbEq6hK2ZGYIT27Rtl0E4eD9KqwxhKiQeMZE/9xb3IdYwWaSOyIBQLExhQgXDTYoiCxnWA==}
 
   type-check@0.4.0:
     resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==}
@@ -986,8 +991,8 @@ packages:
     engines: {node: '>=16'}
     hasBin: true
 
-  wrangler@4.153.0:
-    resolution: {integrity: sha512-Hn1AowKzZao/729rMpdpxBZt/RaKQNJ4GtKtHQcOrwT+J/GIq0iwl680+dhJyO00iSsXaCkxoNcLg3yVIwIvyw==}
+  wrangler@4.156.0:
+    resolution: {integrity: sha512-kVLAShuLiNgE3jcrmXcymDf/iPKDPrSxACe5ueugW/33HeNB9E9CkKYchudCeBwgmsnl4k+1zt4NO7vqb/fRuQ==}
     engines: {node: '>=22.0.0'}
     hasBin: true
     peerDependencies:
@@ -1063,7 +1068,7 @@ snapshots:
 
   '@emnapi/runtime@1.11.3':
     dependencies:
-      tslib: 2.8.1
+      tslib: 2.9.1
     optional: true
 
   '@esbuild/aix-ppc64@0.28.2':
@@ -1667,7 +1672,7 @@ snapshots:
 
   memorystream@0.3.1: {}
 
-  miniflare@5.20261023.0-beta:
+  miniflare@5.20261023.3-beta:
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
       sharp: 0.35.5
@@ -1747,11 +1752,13 @@ snapshots:
 
   semver@7.8.5: {}
 
+  semver@7.8.6: {}
+
   sharp@0.35.5:
     dependencies:
       '@img/colour': 1.1.0
       detect-libc: 2.1.2
-      semver: 7.8.5
+      semver: 7.8.6
     optionalDependencies:
       '@img/sharp-darwin-arm64': 0.35.5
       '@img/sharp-darwin-x64': 0.35.5
@@ -1798,7 +1805,7 @@ snapshots:
     dependencies:
       typescript: 5.7.3
 
-  tslib@2.8.1:
+  tslib@2.9.1:
     optional: true
 
   type-check@0.4.0:
@@ -1846,13 +1853,13 @@ snapshots:
       '@cloudflare/workerd-linux-arm64': 1.20261023.1
       '@cloudflare/workerd-windows-64': 1.20261023.1
 
-  wrangler@4.153.0(@cloudflare/workers-types@5.20261026.1):
+  wrangler@4.156.0(@cloudflare/workers-types@5.20261026.1):
     dependencies:
       '@cloudflare/kv-asset-handler': 0.5.0
       '@cloudflare/unenv-preset': 2.16.2(unenv@2.0.0-rc.24)(workerd@1.20261023.1)
       blake3-wasm: 2.1.5
       esbuild: 0.28.2
-      miniflare: 5.20261023.0-beta
+      miniflare: 5.20261023.3-beta
       path-to-regexp: 6.3.0
       unenv: 2.0.0-rc.24
       workerd: 1.20261023.1
